@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Sausage(el1, el2) {
+      this.inside1 = el1;
+      this.inside2 = el2;
+    }
+
+    Sausage.prototype.taste = function(){
+      return this.inside1 + "와 " + this.inside2 + " 맛이 난다.";
+    }
+
+    var mySausage = new Sausage("돼지고기","마늘");
+
+    // console.log(mySausage.taste());
+
+    function FireSausage(el1, el2, el3){
+      Sausage.call(this, el1,el2);
+      this.inside3 = el3;
+    }
+
+    FireSausage.prototype = Object.create(Sausage.prototype); // FireSausage의 프로토타입이 어느 방향을 가르킬지 정해주는 것이다.
+    FireSausage.prototype.constructor = FireSausage; // 만약에 이코드가 없으면 FireSausage의 constructor가 없어진다.
+
+    FireSausage.prototype.flavor = function(){
+      return this.inside3 + "의 풍미도 있다!";
+    }
+
+    var myNewSausage = new FireSausage("돼지고기", "마늘", "불맛");
+
+    console.log(myNewSausage.taste());
+    console.log(myNewSausage.flavor());
+
+
+  </script>
+</body>
+</html>

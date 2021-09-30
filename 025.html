@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Sausage{
+      constructor(el1, el2) { // 생성자 함수.
+        this.inside1 = el1;
+        this.inside2 = el2;
+      }
+
+      taste(){
+        return this.inside1 + "와 " + this.inside2 + " 맛이 난다.";
+      }
+    }
+
+    var classicSausage = new Sausage("닭고기", "양파");
+    // console.log(classicSausage.taste());
+
+    class FireSausage extends Sausage{ // FireSausage가 Sausage를 상속 받는다는 것입니다.
+      constructor(el1,el2,el3){
+        super(el1, el2); // super 메서드는 부모클래스의 생성자를 호출하는 메서드다. 이렇게 하면 위에 el1,el2가 실행이 되는것이다.
+        this.inside3 = el3;
+      }
+
+      flavor(){
+        return this.inside3 + "의 풍미도 있다!";
+      }
+    }
+
+    var classicFireSausage = new FireSausage("소고기", "파", "불맛");
+    console.log(classicFireSausage.flavor());
+    console.log(classicFireSausage.taste());
+    // var classicFireSausage = new FireSausage("소고기", "파");
+  </script>
+</body>
+</html>

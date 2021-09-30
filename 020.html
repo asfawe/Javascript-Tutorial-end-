@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function smell() {
+      console.log(this.name + " 냄새가 난다!");
+    }
+
+    function Food(name) {
+      this.name = name;
+      this.smell = smell;
+    }
+
+    var myFood = new Food("로제 파스타");
+    var myFood2 = new Food("청란젓");
+    myFood.smell();
+    myFood2.smell();
+
+
+    console.log(myFood.smell === myFood2.smell);
+
+  </script>
+</body>
+</html>

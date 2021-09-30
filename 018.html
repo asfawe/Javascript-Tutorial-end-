@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Food(name){
+      this.name = name;
+      this.smell = function(){
+        console.log(this.name + " 냄새가 난다!");
+      }
+    }
+
+    var myFood1 = new Food("특재 파스타");
+    var myFood2 = new Food("해물 파스타");
+    var myFood3 = new Food("토마토 파스타");
+
+    myFood1.smell();
+    myFood2.smell();
+    myFood3.smell();
+  </script>
+</body>
+</html>
